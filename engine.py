@@ -1,5 +1,4 @@
 import pygame
-import os
 from entity import *
 
 class Engine:
@@ -36,11 +35,18 @@ class Engine:
         self.running = True
         while self.running:
             self.running = self.handle_events()
+            self.update()
             self.screen.fill((255, 255, 255))
             self.render()
             pygame.display.flip()
+            
         pygame.quit()
 
     def render(self):
         self.entity.render(self.screen)
 
+    def update(self):
+        self.input()
+
+    def input(self):
+        pass
