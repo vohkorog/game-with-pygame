@@ -17,7 +17,6 @@ class Entity:
         self.enemy_scale_image = pygame.transform.scale(enemy_image, (self.w, self.h))
 
     def render(self, window):
-        #pygame.draw.rect(window, (0, 128, 255), pygame.Rect(self.x, self.y, self.w, self.h))
         window.blit(self.enemy_scale_image, (self.x, self.y))
 
     def get_image(self):

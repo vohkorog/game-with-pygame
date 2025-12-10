@@ -22,11 +22,9 @@ class Engine:
         pygame.display.set_caption(self.title)
 
     def init_object(self):
-        self.entity = Entity(300, 300, 60, 60, "src\\image\\ball.png")
+        self.entity = Entity(30, 30, 60, 60, "src\\image\\ball.png")
 
-        #enemy_image = self.get_image("src\\image\\ball.png")
-        #self.enemy_scale_image = pygame.transform.scale(enemy_image, (150, 100))
-        
+
     def handle_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -35,7 +33,6 @@ class Engine:
     
     
     def run(self):
-        
         self.running = True
         while self.running:
             self.running = self.handle_events()
@@ -46,6 +43,4 @@ class Engine:
 
     def render(self):
         self.entity.render(self.screen)
-        #self.entity.render(self.screen)
-        #self.screen.blit(self.enemy_scale_image, (100,100))
 
