@@ -21,7 +21,7 @@ class Engine:
         pygame.display.set_caption(self.title)
 
     def init_object(self):
-        self.entity = Entity(30, 30, 60, 60, "src\\image\\ball.png")
+        self.entity = Entity(38, 30, 60, 60, "src\\image\\ball.png")
 
 
     def handle_events(self):
@@ -46,6 +46,7 @@ class Engine:
         self.entity.render(self.screen)
 
     def update(self):
+        self.entity.update()
         self.input()
 
     def input(self):

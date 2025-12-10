@@ -19,6 +19,22 @@ class Entity:
     def render(self, window):
         window.blit(self.enemy_scale_image, (self.x, self.y))
 
+    def update(self):
+        self.input()
+
+    def input(self):
+        
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_w]:
+            self.y -= 0.05
+        if keys[pygame.K_s]:
+            self.y += 0.05
+        if keys[pygame.K_a]:
+            self.x -= 0.05
+        if keys[pygame.K_d]:
+            self.x += 0.05
+            
     def get_image(self):
         image = self._image_library.get(self.path)
         if image == None:
