@@ -1,5 +1,6 @@
 import pygame
 from entity import *
+from texture_add import *
 
 class Engine:
 
@@ -22,6 +23,7 @@ class Engine:
 
     def init_object(self):
         self.entity = Entity(38, 30, 60, 60, "src\\image\\ball.png")
+        self.texture = TextureAdd("src\\image\\texture.jpg")
 
 
     def handle_events(self):
@@ -44,9 +46,11 @@ class Engine:
 
     def render(self):
         self.entity.render(self.screen)
+        self.texture.render(self.screen)
 
     def update(self):
         self.entity.update()
+        self.texture.update()
         self.input()
 
     def input(self):
