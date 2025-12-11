@@ -32,7 +32,7 @@ class TextureAdd:
             if event_mouse[0] and not self.last_mouse_state:
                 self.mouse_click = 1
                 self.position = pygame.mouse.get_pos()
-                print(self.position)    
+                #print(self.position)   # вывод координат клика мыши в консоли 
             else:
                 self.mouse_click = 0
             if event_mouse[2]:
@@ -44,7 +44,7 @@ class TextureAdd:
             if event_mouse[0]:
                 self.mouse_click = 1
                 self.position = pygame.mouse.get_pos()
-                print(self.position)    
+                #print(self.position)    # вывод координат клика мыши в консоли
             else:
                 self.mouse_click = 0
             if event_mouse[2]:

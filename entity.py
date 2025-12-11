@@ -27,13 +27,13 @@ class Entity:
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_w]:
-            self.y -= 0.05
+            self.y -= 5
         if keys[pygame.K_s]:
-            self.y += 0.05
+            self.y += 5
         if keys[pygame.K_a]:
-            self.x -= 0.05
+            self.x -= 5
         if keys[pygame.K_d]:
-            self.x += 0.05
+            self.x += 5
             
     def get_image(self):
         image = self._image_library.get(self.path)

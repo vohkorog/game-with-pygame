@@ -22,8 +22,9 @@ class Engine:
         pygame.display.set_caption(self.title)
 
     def init_object(self):
-        self.entity = Entity(38, 30, 60, 60, "src\\image\\ball.png")
+        
         self.texture = TextureAdd("src\\image\\texture.jpg")
+        self.entity = Entity(38, 30, 60, 60, "src\\image\\ball.png")
 
 
     def handle_events(self):
@@ -35,11 +36,19 @@ class Engine:
     
     def run(self):
         self.running = True
+        clock = pygame.time.Clock()
+        
         while self.running:
+            
             self.running = self.handle_events()
             self.update()
             self.screen.fill((255, 255, 255))
             self.render()
+
+            clock.tick(60)  # Должен быть В НАЧАЛЕ цикла
+            fps = clock.get_fps()
+            print(int(fps))
+            
             pygame.display.flip()
             
         pygame.quit()
