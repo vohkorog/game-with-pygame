@@ -9,9 +9,13 @@ class TextureAdd:
         self.path = path
         self.position = [0, 0] 
         self.mouse_click = 0
+        self.list_entyti = []
 
     def update(self):
         self.input()
+        if self.mouse_click == 1:
+            entity = Entity(50, 50, self.position[0], self.position[1], self.path)
+            self.list_entyti.append(entity)
         
     def input(self):
         event = pygame.mouse.get_pressed()
@@ -24,10 +28,11 @@ class TextureAdd:
             self.mouse_click = 0
 
     def render(self, window):
+        for entit in self.list_entyti:
+            entit.render(window)
         
-        if self.mouse_click == 1:
-            entity = Entity(50, 50, self.position[0], self.position[1], self.path)
-            entity.render(window)
+        
+            
 
 
     
