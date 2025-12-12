@@ -11,14 +11,24 @@ class Style_scene:
 
     def render(self, window):
 
-        self.get_coordinate(window)
-        for i in range(len(self.x)):  # или len(y_lines)
-            # Вертикальная линия
+        width = window.get_width()
+        height = window.get_height()
+        
+        # Рисуем сразу без сохранения в списки
+        cell_width = width / 10
+        cell_height = height / 10
+        
+        # Вертикальные линии
+        for i in range(11):  # 10 ячеек = 11 линий
+            x = i * cell_width
             pygame.draw.line(window, (200, 200, 200), 
-                            (self.x[i], 0), (self.x[i], 600), 1)
-            # Горизонтальная линия
+                           (x, 0), (x, height), 1)
+        
+        # Горизонтальные линии
+        for i in range(11):
+            y = i * cell_height
             pygame.draw.line(window, (200, 200, 200),
-                            (0, self.y[i]), (800, self.y[i]), 1)
+                           (0, y), (width, y), 1)
         
 
     def input(self):
