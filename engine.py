@@ -1,6 +1,7 @@
 import pygame
 from entity import *
 from texture_add import *
+from style_scene import *
 
 class Engine:
 
@@ -25,7 +26,7 @@ class Engine:
         
         self.texture = TextureAdd("src\\image\\texture.jpg")
         self.entity = Entity(38, 30, 60, 60, "src\\image\\ball.png")
-
+        self.style_scene = Style_scene()
 
     def handle_events(self):
         for event in pygame.event.get():
@@ -44,8 +45,7 @@ class Engine:
             self.update()
             self.screen.fill((255, 255, 255))
             self.render()
-
-            clock.tick(60)  # Должен быть В НАЧАЛЕ цикла
+            clock.tick(60)  
             fps = clock.get_fps()
             print(int(fps))
             
@@ -56,10 +56,14 @@ class Engine:
     def render(self):
         self.entity.render(self.screen)
         self.texture.render(self.screen)
+        self.style_scene.render(self.screen)
+
+
 
     def update(self):
         self.entity.update()
         self.texture.update()
+        self.style_scene.update()
         self.input()
 
     def input(self):
