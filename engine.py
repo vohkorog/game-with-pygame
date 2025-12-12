@@ -63,7 +63,7 @@ class Engine:
     def update(self):
         self.entity.update()
         self.texture.update()
-        self.style_scene.update()
+        self.style_scene.update(self.screen)
         self.input()
 
     def input(self):
